@@ -23,7 +23,7 @@ class Manager:
     def _manage_check(self):
     def __init__(self):
         self.auth_service = AuthService()
-        
+        self.manager = Manager()
     @property
     def login_message(self):
         """获取和显示登录消息"""
@@ -69,7 +69,28 @@ def show_message(message):
 show_message("long message", "short message")
 
 
-class LoginCLI:
+from typing import Optional
+
+# 仅管理员可以登录
+class Manager:
+    def __init__(self):
+        self.is_manager = False
+    
+    @property
+    def is_manager(self) -> bool:
+        return self._is_manager
+        
+    @is_manager.setter
+    def is_manager(self, value: bool) -> None:
+        self._is_manager = value
+        
+    def getRoles(self) -> list[str]:
+        """获取当前管理者的角色列表"""
+        if not hasattr(self, '_roles'):
+            self._roles = set()
+        return list(self._roles)
+    
+    def _manage_check(self):
     def __init__(self):
         self.auth_service = AuthService()
         

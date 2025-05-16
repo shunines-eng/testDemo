@@ -20,6 +20,12 @@ class Manager:
             self._roles = set()
         return list(self._roles)
     
+    class RoleHelper:
+        def get_user_role(self, username):
+            """获取用户角色"""
+            users = self.user_repo.get_user(username)
+            return users.get('role', '')
+
     def _manage_check(self):
     def __init__(self):
         self.auth_service = AuthService()
@@ -42,6 +48,15 @@ class Manager:
                 show_message("请使用管理员登录")
                 return None
                 
+            # 添加角色验证逻辑
+            user = self.user_repo.get_user(username)
+            if not user:
+                return (False, "用户不存在")
+            
+            role = self.roleHelper.get_user_role(username)
+            if role != 'manager':
+                return (False, f"角色不支持，必须是管理员才能登录")
+            
             success, message = self.auth_service.login(username, password, max_attempts=3)
             # 根据成功的状态决定输出内容
             if success:

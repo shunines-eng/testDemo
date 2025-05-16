@@ -1,21 +1,26 @@
-def show_message(message):
-    """显示消息"""
-    print("\n" + "-" * 30)
-    print(message)
-    print("-" * 30 + "\n")
+from typing import Optional
 
-# 增加可选参数
-show_message("long message", "short message")
+# 仅管理员可以登录
+class Manager:
+    def __init__(self):
+        self.is_manager = False
+    
+    @property
+    def is_manager(self) -> bool:
+        return self._is_manager
+    
+    @is_manager.setter
+    def is_manager(self, value: bool) -> None:
+        self._is_manager = value
 
-
-def get_input():
-    """获取用户输入"""
-    username = input("用户名：").strip()
-    password = input("密码：").strip()
-    return username, password
-
-
-class LoginCLI:
+    @property
+    def get_roles(self) -> list[str]:
+        """获取当前管理者的角色列表"""
+        if not hasattr(self, '_roles'):
+            self._roles = set()
+        return list(self._roles)
+    
+    def _manage_check(self):
     def __init__(self):
         self.auth_service = AuthService()
         
@@ -32,6 +37,11 @@ class LoginCLI:
         """主程序循环"""
         while True:
             username, password = get_input()
+            if not self.is_manager and success:
+                print("\n" + "-" * 30)
+                show_message("请使用管理员登录")
+                return None
+                
             success, message = self.auth_service.login(username, password, max_attempts=3)
             # 根据成功的状态决定输出内容
             if success:

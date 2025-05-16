@@ -65,11 +65,6 @@ def show_message(message):
     print(message)
     print("-" * 30 + "\n")
 
-# 增加可选参数
-show_message("long message", "short message")
-
-
-from typing import Optional
 
 # 仅管理员可以登录
 class Manager:

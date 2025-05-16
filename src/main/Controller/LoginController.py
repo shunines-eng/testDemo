@@ -1,6 +1,4 @@
 from login_service import AuthService as ServiceName
-import os
-import json
 
 class entered:
     """控制界面的登录验证逻辑"""
@@ -170,7 +168,7 @@ class entered:
         else:
             print(f"登录失败：{'你未属于授权的用户' if not username or not self.service.get_user(username) or not user['user'] else '你的账户已被删除'}。请重新尝试。")
             
-    def __main__(self):
+    def main(self):
         entered().run()
         
 if __name__ == "__main__":

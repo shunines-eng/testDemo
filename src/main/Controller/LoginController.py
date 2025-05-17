@@ -298,6 +298,8 @@ def __main__(self):
             
     def main(self):
         entered().run()
-        
+
+
+# 我在这里新增了一条注释，注释是这样写的
 def main():
     entered()  # 调用控制界面的主调函数

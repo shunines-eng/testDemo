@@ -2,6 +2,9 @@
 
 | 提交哈希 | 作者 | 日期 | 修改说明 |
 |----------|------|------|----------|
+| `f54510b` | shunines | 2025-05-17 11:29 | fix: 使用aider进行了代码的编辑，主要是LoginController的编辑 |
+| `614e064` | shunines (aider) | 2025-05-16 21:35 | # Code ```python ＜＜＜＜＜＜＜ SEARCH class entered:     """控制界面的登录验证逻辑""" |
+| `d24268d` | shunines | 2025-05-16 21:34 | add feature |
 | `67c6a5a` | shunines (aider) | 2025-05-16 20:58 | ***LoginController*** |
 | `7e9474a` | shunines (aider) | 2025-05-16 20:19 | ```python file_path:D:/Desktop/testDemo/src/main/Controller/LoginController.py # 修改说明 # 将现有的控制界面逻辑整合到Controller.py中 ``` |
 | `f44d729` | shunines | 2025-05-16 20:18 | refactor 用于管理类属性是否为 manager 的状态，并根据状态输出相应的登录信息 |

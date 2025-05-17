@@ -1,3 +1,4 @@
+# 初始化登录服务类
 from login_service import AuthService as ServiceName
 
 class entered:
@@ -72,6 +73,8 @@ def run(self, result):
         print(f"登录失败：{'你未属于授权的用户' if not username or not self.service.get_user(username) or not user['user'] else '你的账户已被删除'}。请重新尝试。")
             
 def __main__(self):
+    # 进入控制界面
+    self.main()
         return (username, password)
 
 def _password(self, user):

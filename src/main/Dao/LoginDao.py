@@ -1,16 +1,15 @@
-"""A DAO class for managing authentication logic in a service system."""
-from typing import Dict, Optional
+from typing import Any, Optional
 
 class UserRepository:
     @staticmethod
-    def get_user(username: str) -> Dict[str, ...]:
-        """Return a mock user representation based on username.
+    def get_user(username: str) -> Optional[Dict[str, ...]]:
+        """Get a mock user representation from the database based on username.
 
         Args:
-            username: The username to retrieve the corresponding user object
+            username: The username to retrieve information for
             
         Returns:
-            A dictionary containing admin password and user credentials
+            A dictionary containing admin password and user credentials or None if not found
         """
         users = {
             'admin': {'password': 'admin123', 'role': 'admin'},
@@ -19,7 +18,20 @@ class UserRepository:
         return users.get(username)
 
     
-    def login(self, username: str, password: str) -> Optional[Dict[str, ...]]:
+    def login(self, username: str, password: str) -> Optional[Dict[str, Any]]:
+        """
+        Login method for a service account.
+
+        Args:
+            username: The username to login with
+            password: The required password for the account
+            
+        Returns:
+            Dictionary containing user information or None if not authenticated
+
+        Examples:
+            >>> retrieved_user = getUser('admin', 'admin123')
+            >>> result = login('admin', 'admin123')
         """
         Login method for a service account.
 
@@ -34,7 +46,13 @@ class UserRepository:
             >>> retrieved_user = getUser('admin', 'admin123')
             >>> result = login('admin', 'admin123')
             """
-            return self._make_login_request(username, password)
+            # Make authentication request using the given username and password
+            response = self._make_login_request(username, password)
+            if response is not None:
+                data = self._parse_response(response)
+                return data
+            else:
+                raise ValueError(f"Authentication failed: {response}")
 
 def _make_login_request(self, username: str, password: str) -> Optional[Dict[str, ...]]:
     """Helper method to perform authentication login request.
@@ -54,9 +72,11 @@ def _make_login_request(self, username: str, password: str) -> Optional[Dict[str
 class UserRepository:
     @staticmethod
     def get_user(username):
-        """模拟从数据库获取用户信息"""
-        users = {
-            'admin': {'password': 'admin123', 'role': 'admin'},
-            'user1': {'password': 'user123', 'role': 'member'}
-        }
-        return users.get(username)
+        """Return a mock user representation based on username.
+
+        Args:
+            username: The username to retrieve the corresponding user object
+            
+        Returns:
+            A dictionary containing admin password and user roles or None if not found
+        """

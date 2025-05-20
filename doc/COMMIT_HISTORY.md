@@ -2,6 +2,7 @@
 
 | 提交哈希 | 作者 | 日期 | 修改说明 |
 |----------|------|------|----------|
+| `ebc7166` | shunines | 2025-05-19 12:44 | fix: 为LoginService提供了注释 |
 | `7bd1cae` | shunines | 2025-05-18 14:29 | fix : 为LoginDao生成了注释 |
 | `62abfd3` | shunines | 2025-05-17 21:12 | 给LoginService.py加一些注释吧 |
 | `7b94d45` | shunines | 2025-05-17 15:52 | 给LoginService.py加一些注释吧 |

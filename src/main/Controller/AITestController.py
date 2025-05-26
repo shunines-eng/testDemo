@@ -1,3 +1,5 @@
+import datetime
+
 class AITestController:
     """测试AI功能的控制器类"""
     

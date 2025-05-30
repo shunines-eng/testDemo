@@ -20,6 +20,21 @@ class AITestController:
             "timestamp": datetime.datetime.now().isoformat()
         }
 
+    def test_login_flow(self, username, password):
+        """测试登录流程
+        :return: 包含测试结果的字典
+        """
+        from main.Service.LoginService import LoginService
+        service = LoginService()
+        success, message = service.login(username, password)
+        return {
+            "test_case": "登录验证",
+            "username": username,
+            "success": success,
+            "message": message,
+            "timestamp": datetime.datetime.now().isoformat()
+        }
+
     def get_test_message(self):
         """获取测试消息"""
         return self.test_message

@@ -21,15 +21,19 @@ class LoginDao:
             password (str): 密码
             
         Returns:
-            bool: 验证通过返回True，否则返回False
-            
-        Note:
-            这是一个示例实现，实际项目中应该查询数据库验证用户
+            tuple: (验证结果bool, 错误信息str)
         """
-        # 示例验证逻辑 - 实际项目应该替换为数据库查询
-        if username == "admin" and password == "123456":
-            return True
-        return False
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute(
+                "SELECT password FROM users WHERE username = %s", 
+                (username,))
+            result = cursor.fetchone()
+            if not result:
+                return False, "用户不存在"
+            return (result[0] == password), "密码错误" if result[0] != password else ""
+        except Exception as e:
+            return False, f"数据库错误: {str(e)}"
 
     def get_user_info(self, user_id):
         """获取指定用户的基本信息

@@ -1,4 +1,4 @@
-class AuthService:
+class LoginService:
     def __init__(self):
         self.user_repo = UserRepository()
 

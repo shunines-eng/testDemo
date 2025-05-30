@@ -2,6 +2,7 @@
 
 | 提交哈希 | 作者 | 日期 | 修改说明 |
 |----------|------|------|----------|
+| `d86cf76` | shunines | 2025-05-28 17:16 | docs: 更新代码文档 |
 | `8708520` | shunines (aider) | 2025-05-28 15:41 | docs: 为LoginDao类和方法添加详细注释说明 |
 | `febc17b` | shunines | 2025-05-28 15:41 | refactor: 移除LoginDao中的冗余注释 |
 | `862d9ff` | shunines (aider) | 2025-05-27 08:30 | feat: 实现LoginDao类并添加详细注释 |

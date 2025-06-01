@@ -1,5 +1,3 @@
-# 登录数据访问对象(DAO)类
-# 负责处理与用户登录相关的数据库操作
 class LoginDao:
     
     def __init__(self, db_connection):

@@ -2,6 +2,8 @@
 
 | 提交哈希 | 作者 | 日期 | 修改说明 |
 |----------|------|------|----------|
+| `8ff6b7f` | shunines | 2025-05-30 17:21 | feat: 更改了注释 |
+| `473a9b8` | shunines (aider) | 2025-05-30 17:13 | docs: 为LoginDao.py添加详细注释和文档 |
 | `cda1634` | shunines (aider) | 2025-05-30 16:44 | chore: 删除LoginDao.py中所有注释并添加时间戳 |
 | `6923352` | shunines (aider) | 2025-05-30 16:32 | fix: 修复LoginService中未定义的UserRepository引用 |
 | `b6387fb` | shunines (aider) | 2025-05-30 16:32 | feat: 实现登录验证功能与数据库集成 |

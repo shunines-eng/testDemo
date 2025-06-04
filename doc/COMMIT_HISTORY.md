@@ -2,6 +2,7 @@
 
 | 提交哈希 | 作者 | 日期 | 修改说明 |
 |----------|------|------|----------|
+| `d75e980` | shunines | 2025-06-04 09:06 | feat ：尝试上传LoginController |
 | `fcdb77d` | shunines | 2025-06-04 09:04 | feat ：更新项目，删除无用注释，编辑LoginController代码 |
 | `5e89da6` | shunines | 2025-06-02 21:41 | fix :测试 |
 | `cbd1c32` | shunines | 2025-06-02 21:39 | fix :更新了AITestController |

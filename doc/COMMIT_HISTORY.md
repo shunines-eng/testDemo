@@ -2,6 +2,12 @@
 
 | 提交哈希 | 作者 | 日期 | 修改说明 |
 |----------|------|------|----------|
+| `5e89da6` | shunines | 2025-06-02 21:41 | fix :测试 |
+| `cbd1c32` | shunines | 2025-06-02 21:39 | fix :更新了AITestController |
+| `b25f252` | shunines | 2025-06-02 21:36 | 更新代码 |
+| `3f580c3` | shunines (aider) | 2025-06-02 21:30 | test: 添加AI控制器和登录服务的单元测试 |
+| `9854789` | shunines | 2025-06-01 20:59 | feat :我删除了LoginDao.py的注释 |
+| `bc0b917` | shunines (aider) | 2025-06-01 20:53 | docs: 为AITestController.py添加详细注释和日期信息 |
 | `8ff6b7f` | shunines | 2025-05-30 17:21 | feat: 更改了注释 |
 | `473a9b8` | shunines (aider) | 2025-05-30 17:13 | docs: 为LoginDao.py添加详细注释和文档 |
 | `cda1634` | shunines (aider) | 2025-05-30 16:44 | chore: 删除LoginDao.py中所有注释并添加时间戳 |

@@ -72,7 +72,7 @@ class LoginController:
 
 
 
-# 使用示例
+#你好
 
 if __name__ == "__main__":
 

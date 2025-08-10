@@ -72,7 +72,7 @@ class LoginController:
 
 
 
-#你好
+# Hello
 
 if __name__ == "__main__":
 
@@ -104,4 +104,4 @@ if __name__ == "__main__":
 
         response = controller.handle_login(uname, pwd)
 
-        print(f"用户 [{uname}] 登录结果: {response}")
+        print(f"User [{uname}] login result: {response}")

@@ -19,7 +19,6 @@ class LoginService:
         Returns:
             tuple: (验证结果bool, 消息str)
         """
-        # 使用DAO进行用户验证
         valid, message = self.dao.validate_user(username, password)
         
         if valid:

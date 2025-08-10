@@ -76,7 +76,7 @@ class LoginController:
 
 if __name__ == "__main__":
 
-    # 模拟数据库连接
+    # Mock database connection
 
     mock_db_connection = "db_conn"
 
@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     
 
-    # 测试用例
+    # Test cases
 
     test_cases = [
 

@@ -8,55 +8,55 @@ class LoginController:
 
     def __init__(self, db_connection):
 
-        """初始化登录控制器
+        """Initialize login controller
 
         
 
         Args:
 
-            db_connection: 数据库连接对象
+            db_connection: Database connection object
 
         """
 
         self.service = LoginService(db_connection)
 
-        print("LoginController 初始化完成")
+        print("LoginController initialized")
 
 
 
     def handle_login(self, username, password):
 
-        """处理用户登录请求
+        """Handle user login request
 
         
 
         Args:
 
-            username (str): 用户名
+            username (str): Username
 
-            password (str): 密码
+            password (str): Password
 
             
 
         Returns:
 
-            tuple: (登录结果, 返回消息)
+            tuple: (Login result, Return message)
 
         """
 
-        # 调用服务层进行登录验证
+        # Call service layer for login validation
 
         success, message = self.service.login(username, password)
 
         
 
-        # 登录成功后更新最后登录时间
+        # Update last login time after successful login
 
         if success:
 
-            # 实际项目中这里会获取真实用户ID
+            # In real project this would get actual user ID
 
-            self.service.dao.update_last_login(f"用户:{username}")
+            self.service.dao.update_last_login(f"user:{username}")
 
         
 

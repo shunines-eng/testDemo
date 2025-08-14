@@ -8,53 +8,56 @@ class LoginController:
 
     def __init__(self, db_connection):
 
-        """Initialize login controller123
+        """初始化登录控制器
 
         
 
         Args:
 
-            db_connection: Database connection object
+            db_connection: 数据库连接对象
 
         """
 
         self.service = LoginService(db_connection)
 
-        print("LoginController initialized")
+        print("登录控制器初始化完成")
 
 
 
     def handle_login(self, username, password):
 
-        """Handle user login request
+        """处理用户登录请求
 
         
 
         Args:
 
-            username (str): Username
+            username (str): 用户名
 
-            password (str): Password
+            password (str): 密码
 
             
 
         Returns:
 
-            tuple: (Login result, Return message)
+            dict: 包含登录结果的字典，包含以下键：
+                - success: 登录是否成功
+                - message: 返回消息
+                - user: 如果登录成功则为用户信息，否则为None
 
         """
 
-        # Call service layer for login validation
+        # 调用服务层进行登录验证
 
         success, message = self.service.login(username, password)
 
         
 
-        # Update last login time after successful login
+        # 登录成功后更新最后登录时间
 
         if success:
 
-            # In real project this would get actual user ID
+            # 在实际项目中，这里会获取真实的用户ID
 
             self.service.dao.update_last_login(f"user:{username}")
 
@@ -72,11 +75,9 @@ class LoginController:
 
 
 
-# Hello
-
 if __name__ == "__main__":
 
-    # Mock database connection
+    # 模拟数据库连接
 
     mock_db_connection = "db_conn"
 
@@ -86,7 +87,7 @@ if __name__ == "__main__":
 
     
 
-    # Test cases
+    # 测试用例
 
     test_cases = [
 
@@ -99,9 +100,6 @@ if __name__ == "__main__":
     ]
 
     
-
     for uname, pwd in test_cases:
-
         response = controller.handle_login(uname, pwd)
-
-        print(f"User [{uname}] login result: {response}")
+        print(f"用户 [{uname}] 登录结果: {response}")

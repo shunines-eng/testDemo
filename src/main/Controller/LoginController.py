@@ -14,7 +14,7 @@ class LoginController:
 
         Args:
 
-            db_connection: 数据库连接对象
+            db_connection: 数据库连接对象q
 
         """
 
